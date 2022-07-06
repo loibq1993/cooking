@@ -18,7 +18,7 @@ on:
       - "development"
 
 env:
-  PROJECT_ID: ${{ secrets.COOKING }}
+  PROJECT_ID: crack-battery-355416
   GAR_LOCATION: asia-southeast1-a # TODO: update region of the Artifact Registry
   GKE_CLUSTER: cooking    # TODO: update to cluster name
   GKE_ZONE: asia-southeast1-a   # TODO: update to cluster zone
@@ -48,6 +48,7 @@ jobs:
         token_format: 'access_token'
         #workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
         service_account: 'cooking@crack-battery-355416.iam.gserviceaccount.com'
+        credentials_json: '${{ secrets.COOKING }}'
 
     # Alternative option - authentication via credentials json
     # - id: 'auth'
