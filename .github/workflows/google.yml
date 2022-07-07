@@ -19,7 +19,7 @@ on:
 
 env:
   PROJECT_ID: crack-battery-355416
-  GAR_LOCATION: asia-southeast1-a # TODO: update region of the Artifact Registry
+  GAR_LOCATION: asia-southeast1 # TODO: update region of the Artifact Registry
   GKE_CLUSTER: cooking    # TODO: update to cluster name
   GKE_ZONE: asia-southeast1-a   # TODO: update to cluster zone
   DEPLOYMENT_NAME: nginx-1 # TODO: update to deployment name
