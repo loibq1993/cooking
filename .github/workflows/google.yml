@@ -84,6 +84,6 @@ jobs:
         chmod +x kompose
         sudo mv ./kompose /usr/local/bin/kompose
         kompose convert -f docker-compose.yml
-        kubectl apply -f ./*
+        kubectl apply $(ls *.yml | awk ' { print " -f " $1 } ')
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
