@@ -79,7 +79,10 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-        # replacing the image name in the k8s template
+        # Setup kompose and run
+        curl -L https://github.com/kubernetes/kompose/releases/download/v1.26.0/kompose-linux-amd64 -o kompose
+        chmod +x kompose
+        sudo mv ./kompose /usr/local/bin/kompose
         kompose convert -f docker-compose.yml
         kubectl apply -f -
         kubectl rollout status deployment/$DEPLOYMENT_NAME
