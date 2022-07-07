@@ -66,11 +66,11 @@ jobs:
         cluster_name: ${{ env.GKE_CLUSTER }}
         location: ${{ env.GKE_ZONE }}
 
-  - name: Install Compose
+    - name: Install Compose
       uses: ndeloof/install-docker-compose
       with:
-        version: v2.1.0 # defaults to 'latest'
-        legacy: true    # will also install in PATH as `docker-compose`
+          version: v2.1.0 # defaults to 'latest'
+          legacy: true    # will also install in PATH as `docker-compose`
 
     # Build the Docker image
     - name: Build
